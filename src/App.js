@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { render } from "@react-email/render";
+import "./App.css";
+import { EmailTemplate } from "./EmailTemplate";
 
 function App() {
+  console.log(
+    render(<EmailTemplate body="Testing in new repo" />, {
+      pretty: true,
+    })
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-black min-h-screen flex items-center justify-center">
+      <div className="container mx-auto text-white">
+        {"Test app for Sero <> Resend"}
+      </div>
     </div>
   );
 }
